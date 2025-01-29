@@ -59,6 +59,29 @@
             margin-top: 5px;
             font-size: 18px;
         }
+
+        /* Стили для кнопки корзины */
+        .cart-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            display: none; /* По умолчанию скрыта */
+        }
+        .cart-button-link {
+            font-size: 24px;
+            color: #ffffff;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -147,5 +170,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Кнопка корзины -->
+    <div class="cart-button-container">
+        <a href="cart.html" class="cart-button-link">🛒</a>
+    </div>
+
+    <script>
+        function updateCartButtonVisibility() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+            const cartButton = document.querySelector('.cart-button-container');
+            
+            if (Object.keys(cart).length > 0) {
+                cartButton.style.display = 'flex';
+            } else {
+                cartButton.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartButtonVisibility();
+        });
+    </script>
 </body>
 </html>
