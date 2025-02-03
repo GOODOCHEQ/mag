@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Магазин</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .category a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .category img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+        }
+        .category p {
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        /* Стили для кнопки корзины */
+        .cart-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            display: none; /* По умолчанию скрыта */
+        }
+        .cart-button-link {
+            font-size: 24px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Логотип">
+    </div>
+    <div class="content">
+        <div class="categories">
+            <div class="category">
+                <a href="kolb.html">
+                    <img src="kolb.jpg" alt="Колбаса">
+                    <p>Колбаса</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="kot.html">
+                    <img src="kotl.JPG" alt="Котлеты">
+                    <p>Котлеты</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="kyp.html">
+                    <img src="kyp.JPG" alt="Купаты">
+                    <p>Купаты</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="pel.html">
+                    <img src="pelm.jpg" alt="Пельмени">
+                    <p>Пельмени</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="tysh.html">
+                    <img src="tysh.JPG" alt="Тушенка">
+                    <p>Тушенка</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="steyk.html">
+                    <img src="steykab.jpg" alt="Стейки">
+                    <p>Стейки</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="myas.html">
+                    <img src="123.png" alt="Мясо">
+                    <p>Мясо</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="ryb.html">
+                    <img src="123.png" alt="Рыба">
+                    <p>Рыба</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="reb.html">
+                    <img src="123.png" alt="Ребра">
+                    <p>Ребра</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="gryd.html">
+                    <img src="123.png" alt="Грудка">
+                    <p>Грудка</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="pasht.html">
+                    <img src="123.png" alt="Паштет">
+                    <p>Паштет</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="gryb.html">
+                    <img src="123.png" alt="Грибы сушеные">
+                    <p>Грибы сушеные</p>
+                </a>
+            </div>
+            <div class="category">
+                <a href="syrnik.html">
+                    <img src="123.png" alt="Сырники">
+                    <p>Сырники</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка корзины -->
+    <div class="cart-button-container">
+        <a href="cart.html" class="cart-button-link">🛒</a>
+    </div>
+
+    <script>
+        function updateCartButtonVisibility() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+            const cartButton = document.querySelector('.cart-button-container');
+            
+            if (Object.keys(cart).length > 0) {
+                cartButton.style.display = 'flex';
+            } else {
+                cartButton.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartButtonVisibility();
+        });
+    </script>
+</body>
+</html>
