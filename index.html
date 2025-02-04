@@ -198,11 +198,13 @@
             updateCartButtonVisibility();
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
+       document.addEventListener('DOMContentLoaded', () => {
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
         Telegram.WebApp.expand();
+        Telegram.WebApp.setHeaderColor("#121212");
     }
 });
+
 
     </script>
 </body>
