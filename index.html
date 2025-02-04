@@ -197,6 +197,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             updateCartButtonVisibility();
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.expand();
+    }
+});
+
     </script>
 </body>
 </html>
