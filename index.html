@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Магазин</title>
     <style>
         body {
@@ -82,6 +82,12 @@
             color: #ffffff;
             text-decoration: none;
         }
+
+        .cart-icon {
+    width: 40px;  /* Ширина изображения */
+    height: 40px; /* Высота изображения */
+    
+}
     </style>
 </head>
 <body>
@@ -128,7 +134,7 @@
             </div>
             <div class="category">
                 <a href="myas.html">
-                    <img src="img/123.png" alt="Мясо">
+                    <img src="img/virolen.JPG" alt="Мясо">
                     <p>Мясо</p>
                 </a>
             </div>
@@ -146,7 +152,7 @@
             </div>
             <div class="category">
                 <a href="gryd.html">
-                    <img src="img/123.png" alt="Грудка">
+                    <img src="img/gryd.jpg" alt="Грудка">
                     <p>Грудка</p>
                 </a>
             </div>
@@ -164,7 +170,7 @@
             </div>
             <div class="category">
                 <a href="syrnik.html">
-                    <img src="img/123.png" alt="Сырники">
+                    <img src="img/syrnik.JPG" alt="Сырники">
                     <p>Сырники</p>
                 </a>
             </div>
@@ -177,9 +183,10 @@
         </div>
     </div>
 
-    <!-- Кнопка корзины -->
     <div class="cart-button-container">
-        <a href="cart.html" class="cart-button-link">🛒</a>
+        <a href="cart.html" class="cart-button-link">
+            <img src="img/cart.png" alt="Корзина" class="cart-icon">
+        </a>
     </div>
 
     <script>
