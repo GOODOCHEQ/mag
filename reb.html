@@ -42,12 +42,19 @@
             padding: 20px;
             text-align: center;
         }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff5722;
+        }
         .products {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* По умолчанию 2 колонки */
             gap: 20px;
             justify-items: center;
-            margin-top: 20px;
         }
         .product {
             display: flex;
@@ -80,6 +87,24 @@
             width: 110px;
             height: 40px;
         }
+
+        /* Стили только для категории "Олень" */
+        .category-deer .products {
+            grid-template-columns: repeat(3, 1fr); /* 3 колонки для оленя */
+        }
+        .category-deer .product img {
+            width: 120px; /* Уменьшенный размер изображения */
+            height: 120px;
+        }
+        .category-deer .product p {
+            font-size: 16px; /* Уменьшенный размер текста */
+        }
+        .category-deer .product button {
+            font-size: 14px; /* Уменьшенный размер текста кнопки */
+            width: 100px; /* Уменьшенная ширина кнопки */
+            height: 35px; /* Уменьшенная высота кнопки */
+        }
+
         .cart-button-container {
             position: fixed;
             bottom: 20px;
@@ -106,19 +131,62 @@
 <body>
     <div class="header">
         <a href="index.html" class="back-button"></a>
-        <h1>Рёбра</h1>
+        <h1>Рёбра (под заказ)</h1>
     </div>
     <div class="content">
-        <div class="products">
-            <div class="product" data-id="Олень (сувид)">
-                <img src="img/rebra.jpg" alt="Олень (сувид)">
-                <p>Олень (сувид)</p>
-                <button data-id="Олень (сувид)" data-price="1800">1800р</button>
+        <!-- Категория: Олень -->
+        <div class="category category-deer"> <!-- Добавлен класс category-deer -->
+            <h2>Олень</h2>
+            <div class="products">
+                <div class="product" data-id="Олень (сувид)">
+                    <img src="img/rebra.jpg" alt="Олень (сувид)">
+                    <p>Сувид</p>
+                    <button data-id="Олень (сувид)" data-price="1800">1800р</button>
+                </div>
+                <div class="product" data-id="Олень холодного копчения">
+                    <img src="img/rebra.jpg" alt="Олень холодного копчения">
+                    <p>Холодного копчения</p>
+                    <button data-id="Олень холодного копчения" data-price="1800">1800р</button>
+                </div>
+                <div class="product" data-id="Олень горячего копчения">
+                    <img src="img/rebra.jpg" alt="Олень горячего копчения">
+                    <p>Горячего копчения</p>
+                    <button data-id="Олень горячего копчения" data-price="1800">1800р</button>
+                </div>
             </div>
-            <div class="product" data-id="Кабан горячего копчения">
-                <img src="img/rebra.jpg" alt="Кабан горячего копчения">
-                <p>Кабан горячего копчения</p>
-                <button data-id="Кабан горячего копчения" data-price="2500">2500р</button>
+        </div>
+
+        <!-- Категория: Кабан -->
+        <div class="category">
+            <h2>Кабан</h2>
+            <div class="products">
+                <div class="product" data-id="Кабан горячего копчения">
+                    <img src="img/rebra.jpg" alt="Кабан горячего копчения">
+                    <p>Горячего копчения</p>
+                    <button data-id="Кабан горячего копчения" data-price="2500">2500р</button>
+                </div>
+                <div class="product" data-id="Кабан холодного копчения">
+                    <img src="img/rebra.jpg" alt="Кабан холодного копчения">
+                    <p>Холодного копчения</p>
+                    <button data-id="Кабан холодного копчения" data-price="2500">2500р</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Категория: Лось -->
+        <div class="category">
+            <h2>Лось</h2>
+            <div class="products">
+                <div class="product" data-id="Лось холодного копчения">
+                    <img src="img/rebra.jpg" alt="Лось холодного копчения">
+                    <p>Холодного копчения</p>
+                    <button data-id="Лось холодного копчения" data-price="2500">2500р</button>
+                </div>
+                <div class="product" data-id="Лось горячегокопчения">
+                    <img src="img/rebra.jpg" alt="Лось горячего копчения">
+                    <p>Горячего копчения</p>
+                    <button data-id="Лось горячего копчения" data-price="2500">2500р</button>
+                </div>
             </div>
         </div>
     </div>
@@ -131,6 +199,7 @@
     </div>
 
     <script>
+        // Ваш JavaScript-код остается без изменений
         document.querySelectorAll('.product button').forEach(button => {
             button.addEventListener('click', () => {
                 const productElement = button.closest('.product');
