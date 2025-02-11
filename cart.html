@@ -41,13 +41,13 @@
 
 .back-button::before {
     content: '\2190'; /* Unicode for left arrow */
-    font-size: 28px;
+    font-size: 28px; 
     margin-right: 10px;
 }
 
 
         .cart-container {
-            max-width: 400px;
+            max-width: 90%;;
             margin: 20px auto;
             padding: 10px;
             background-color: #1f1f1f;
@@ -56,21 +56,21 @@
         }
 
         .cart-item {
-            display: grid;
-            grid-template-columns: 80px 1fr 100px 50px;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-        }
+    display: grid;
+    grid-template-columns: 110px 1fr 100px 50px; /* Увеличил ширину первого столбца */
+    align-items: center;
+    gap: 15px; /* Увеличил расстояние между элементами */
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
 
         .cart-item:last-child {
             border-bottom: none;
         }
 
         .cart-item img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 8px;
             object-fit: cover;
             border: 2px solid #ffffff;
@@ -88,23 +88,24 @@
         }
 
         .quantity-control button {
-            width: 30px;
-            height: 30px;
-            font-size: 20px;
-            border: none;
-            background-color: #ff6600;
-            color: #ffffff;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    background-color: #ff6600;
+    color: #ffffff;
+    border-radius: 4px; /* Углы чуть скруглённые */
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
         .quantity-control button:hover {
             background-color: #ff4500;
         }
 
         .quantity-display {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #ffffff;
             text-align: center;
@@ -112,7 +113,7 @@
         }
 
         .item-price {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             text-align: right;
         }
