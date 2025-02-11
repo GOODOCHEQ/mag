@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Сырники</title>
+    <title>Стейки</title>
     <style>
         body {
             margin: 0;
@@ -106,29 +106,19 @@
 <body>
     <div class="header">
         <a href="index.html" class="back-button"></a>
-        <h1>Сырники</h1>
+        <h1>Стейки 1кг</h1>
     </div>
     <div class="content">
         <div class="products">
-            <div class="product" data-id="Сырники творожные 500г">
-                <img src="img/syrnik.JPG" alt="Сырники творожные 500г">
-                <p>Сырники творожные 500г</p>
-                <button data-id="Сырники творожные 500г" data-price="500">500р</button>
+            <div class="product" data-id="Стейк Олень">
+                <img src="img/s_ol.JPG" alt="Олень">
+                <p>Олень</p>
+                <button data-id="Стейк Олень" data-price="1800">1800р</button>
             </div>
-            <div class="product" data-id="Сырники тофу 500г">
-                <img src="img/syrnik.JPG" alt="Сырники тофу 500г">
-                <p>Сырники тофу 500г</p>
-                <button data-id="Сырники тофу 500г" data-price="600">600р</button>
-            </div>
-            <div class="product" data-id="Сырники творожные 1кг">
-                <img src="img/syrnik.JPG" alt="Сырники творожные 1кг">
-                <p>Сырники творожные 1кг</p>
-                <button data-id="Сырники творожные 1кг" data-price="900">900р</button>
-            </div>
-            <div class="product" data-id="Сырники тофу 1кг">
-                <img src="img/syrnik.JPG" alt="Сырники тофу 1кг">
-                <p>Сырники тофу 1кг</p>
-                <button data-id="Сырники тофу 1кг" data-price="900">900р</button>
+            <div class="product" data-id="Стейк Кабан">
+                <img src="img/steykab.JPG" alt="Кабан">
+                <p>Кабан</p>
+                <button data-id="Стейк Кабан" data-price="1500">1500р</button>
             </div>
         </div>
     </div>
@@ -184,10 +174,10 @@
         }
 
         function resetButton(button, productId, productPrice) {
-            button.innerHTML = `${productPrice}р`;
             removeFromLocalStorage(productId);
+            button.innerHTML = `${productPrice}р`;
 
-            // Создаем новую кнопку, чтобы сбросить события
+            // Создаем новую кнопку и заменяем старую, чтобы сбросить обработчики событий
             const newButton = button.cloneNode(true);
             button.replaceWith(newButton);
 
