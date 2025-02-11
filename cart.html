@@ -93,16 +93,18 @@
     font-size: 16px;
     font-weight: normal;
     border: none;
-    background-color: #ff6600;
-    color: #ffffff;
-    border-radius: 4px; /* Углы чуть скруглённые */
+    background-color: transparent; /* Убираем фон */
+    color: #ffffff; /* Цвет текста */
+    border-radius: 0; /* Убираем скругление углов */
     cursor: pointer;
-    transition: background 0.3s;
+    transition: none; /* Убираем переходы */
+    padding: 0; /* Убираем внутренние отступы */
 }
 
-        .quantity-control button:hover {
-            background-color: #ff4500;
-        }
+.quantity-control button:hover {
+    background-color: transparent; /* Убираем фон при наведении */
+    color: #ffffff; /* Цвет текста при наведении */
+}
 
         .quantity-display {
             font-size: 16px;
