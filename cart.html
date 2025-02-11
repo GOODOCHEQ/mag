@@ -55,15 +55,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
-        .cart-item {
-    display: grid;
-    grid-template-columns: 110px 1fr 100px 50px; /* Увеличил ширину первого столбца */
-    align-items: center;
-    gap: 15px; /* Увеличил расстояние между элементами */
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-
         .cart-item:last-child {
             border-bottom: none;
         }
@@ -79,12 +70,6 @@
         .item-name {
             font-size: 18px;
             font-weight: bold;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .quantity-control button {
@@ -106,13 +91,29 @@
     color: #ffffff; /* Цвет текста при наведении */
 }
 
-        .quantity-display {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ffffff;
-            text-align: center;
-            width: 30px;
-        }
+.cart-item {
+    display: grid;
+    grid-template-columns: 110px 1fr 70px 100px; /* Уменьшаем ширину контейнера для количества */
+    align-items: center;
+    gap: 10px; /* Уменьшаем расстояние между элементами */
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Уменьшаем расстояние между кнопками и количеством */
+    justify-content: center; /* Центрируем элементы внутри контейнера */
+}
+
+.quantity-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    width: 25px; /* Уменьшаем ширину контейнера для отображения количества */
+}
 
         .item-price {
             font-size: 18px;
